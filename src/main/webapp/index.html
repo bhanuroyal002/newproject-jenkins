@@ -68,32 +68,14 @@
             font-weight: 500;
         }
 
-        /* ============================================
-           BOLD TYPOGRAPHY
-           ============================================ */
-        h1, h2, h3, h4 {
-            font-weight: 900;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-        }
-
-        h1 {
-            font-size: 4.2rem;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        h2 {
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        h3 {
-            font-size: 1.6rem;
-            font-weight: 800;
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 28px;
         }
 
         /* ============================================
-           SCROLL PROGRESS - BOLD
+           SCROLL PROGRESS
            ============================================ */
         .scroll-progress {
             position: fixed;
@@ -108,7 +90,7 @@
         }
 
         /* ============================================
-           HEADER - BOLD GLASS
+           HEADER
            ============================================ */
         .header {
             background: rgba(10, 10, 10, 0.92);
@@ -125,12 +107,6 @@
         }
         .header.scrolled {
             box-shadow: var(--shadow-lg);
-        }
-
-        .container {
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 0 28px;
         }
 
         .header-flex {
@@ -255,7 +231,7 @@
         }
 
         /* ============================================
-           HERO - ULTRA BOLD
+           HERO
            ============================================ */
         .hero {
             background: var(--bg-secondary);
@@ -304,7 +280,6 @@
             margin-bottom: 20px;
             box-shadow: 0 4px 20px var(--accent-glow);
         }
-
         .hero-content h1 {
             font-size: 4.2rem;
             font-weight: 900;
@@ -317,7 +292,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 32px;
@@ -381,7 +355,7 @@
         }
 
         /* ============================================
-           STATS - BOLD NUMBERS
+           STATS
            ============================================ */
         .stats-grid {
             display: grid;
@@ -415,7 +389,7 @@
         }
 
         /* ============================================
-           FILTERS - BOLD
+           FILTERS
            ============================================ */
         .filters-bar {
             display: flex;
@@ -454,7 +428,7 @@
         }
 
         /* ============================================
-           PRODUCT CARDS - BOLD
+           PRODUCTS
            ============================================ */
         .product-grid {
             display: grid;
@@ -585,7 +559,7 @@
         }
 
         /* ============================================
-           FLASH SALE - BOLD
+           FLASH SALE
            ============================================ */
         .flash-sale {
             background: var(--bg-secondary);
@@ -671,7 +645,115 @@
         }
 
         /* ============================================
-           CART SIDEBAR - BOLD
+           TESTIMONIALS
+           ============================================ */
+        .testimonial-carousel {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            padding: 20px 4px 32px;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+        .testimonial-carousel::-webkit-scrollbar {
+            height: 8px;
+        }
+        .testimonial-carousel::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+            border-radius: 10px;
+        }
+        .testimonial-carousel::-webkit-scrollbar-thumb {
+            background: var(--accent-gradient);
+            border-radius: 10px;
+        }
+
+        .testimonial-card {
+            min-width: 340px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            scroll-snap-align: start;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            box-shadow: var(--shadow);
+        }
+        .testimonial-card:hover {
+            transform: scale(1.03);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ============================================
+           NEWSLETTER
+           ============================================ */
+        .newsletter-glass {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            padding: 60px 40px;
+            text-align: center;
+            margin: 40px 0 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .newsletter-glass::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, var(--accent-glow) 0%, transparent 50%);
+            animation: rotateGlow 20s linear infinite;
+        }
+        @keyframes rotateGlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .newsletter-glass h3 {
+            font-size: 2.4rem;
+            font-weight: 900;
+            position: relative;
+            z-index: 1;
+        }
+        .newsletter-glass p {
+            color: var(--text-secondary);
+            margin: 6px 0 24px;
+            position: relative;
+            z-index: 1;
+            font-weight: 500;
+        }
+
+        .news-form {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .news-form input {
+            padding: 16px 28px;
+            border-radius: 60px;
+            border: 2px solid var(--border);
+            background: var(--bg-primary);
+            width: 320px;
+            font-size: 1rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .news-form input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px var(--accent-glow);
+        }
+
+        /* ============================================
+           CART SIDEBAR
            ============================================ */
         .cart-overlay {
             position: fixed;
@@ -828,121 +910,9 @@
             margin-bottom: 16px;
             opacity: 0.3;
         }
-        .cart-empty p {
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
 
         /* ============================================
-           TESTIMONIALS - BOLD
-           ============================================ */
-        .testimonial-carousel {
-            display: flex;
-            gap: 24px;
-            overflow-x: auto;
-            padding: 20px 4px 32px;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-        }
-        .testimonial-carousel::-webkit-scrollbar {
-            height: 8px;
-        }
-        .testimonial-carousel::-webkit-scrollbar-track {
-            background: var(--bg-primary);
-            border-radius: 10px;
-        }
-        .testimonial-carousel::-webkit-scrollbar-thumb {
-            background: var(--accent-gradient);
-            border-radius: 10px;
-        }
-
-        .testimonial-card {
-            min-width: 340px;
-            background: var(--bg-secondary);
-            border: 2px solid var(--border);
-            border-radius: var(--radius);
-            padding: 32px;
-            scroll-snap-align: start;
-            transition: all 0.3s ease;
-            flex-shrink: 0;
-            box-shadow: var(--shadow);
-        }
-        .testimonial-card:hover {
-            transform: scale(1.03);
-            border-color: var(--accent);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* ============================================
-           NEWSLETTER - BOLD GLASS
-           ============================================ */
-        .newsletter-glass {
-            background: var(--bg-secondary);
-            border: 2px solid var(--border);
-            border-radius: var(--radius);
-            padding: 60px 40px;
-            text-align: center;
-            margin: 40px 0 20px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-        .newsletter-glass::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 50%, var(--accent-glow) 0%, transparent 50%);
-            animation: rotateGlow 20s linear infinite;
-        }
-        @keyframes rotateGlow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .newsletter-glass h3 {
-            font-size: 2.4rem;
-            font-weight: 900;
-            position: relative;
-            z-index: 1;
-        }
-        .newsletter-glass p {
-            color: var(--text-secondary);
-            margin: 6px 0 24px;
-            position: relative;
-            z-index: 1;
-            font-weight: 500;
-        }
-
-        .news-form {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            position: relative;
-            z-index: 1;
-        }
-        .news-form input {
-            padding: 16px 28px;
-            border-radius: 60px;
-            border: 2px solid var(--border);
-            background: var(--bg-primary);
-            width: 320px;
-            font-size: 1rem;
-            color: var(--text-primary);
-            font-weight: 500;
-            transition: var(--transition);
-        }
-        .news-form input:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 4px var(--accent-glow);
-        }
-
-        /* ============================================
-           CONTACT - BOLD
+           CONTACT
            ============================================ */
         .contact-wrapper {
             background: var(--bg-secondary);
@@ -1016,8 +986,13 @@
             color: var(--error);
         }
 
+        @keyframes slideDown {
+            from { transform: translateY(-10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
         /* ============================================
-           TOAST NOTIFICATIONS
+           TOAST
            ============================================ */
         .toast-container {
             position: fixed;
@@ -1066,7 +1041,7 @@
         }
 
         /* ============================================
-           BACK TO TOP - BOLD
+           BACK TO TOP
            ============================================ */
         .fab-top {
             position: fixed;
@@ -1099,7 +1074,7 @@
         }
 
         /* ============================================
-           FOOTER - BOLD
+           FOOTER
            ============================================ */
         footer {
             background: var(--bg-secondary);
@@ -1140,8 +1115,820 @@
         }
 
         /* ============================================
-           ANIMATIONS
+           RESPONSIVE
            ============================================ */
-        @keyframes slideDown {
-            from { transform: translateY(-10px); opacity: 0; }
-            to { transform: translateY(0);
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 3.2rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            .nav {
+                display: none;
+            }
+            .search-wrap {
+                min-width: 160px;
+            }
+            .hero {
+                padding: 32px 24px;
+                flex-direction: column;
+            }
+            .hero-content h1 {
+                font-size: 2.6rem;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 24px;
+            }
+            .stat-number {
+                font-size: 2.4rem;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .contact-wrapper {
+                padding: 24px;
+            }
+            .testimonial-card {
+                min-width: 280px;
+                padding: 24px;
+            }
+            .flash-sale {
+                padding: 24px;
+            }
+            .flash-content h2 {
+                font-size: 2.2rem;
+            }
+            .timer {
+                gap: 10px;
+            }
+            .time-block {
+                min-width: 60px;
+                padding: 8px 12px;
+            }
+            .time-block .num {
+                font-size: 1.6rem;
+            }
+            .newsletter-glass {
+                padding: 32px 20px;
+            }
+            .newsletter-glass h3 {
+                font-size: 1.8rem;
+            }
+            .news-form input {
+                width: 100%;
+            }
+            .cart-sidebar {
+                width: 100%;
+                max-width: 100vw;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            .filters-bar {
+                gap: 8px;
+            }
+            .filter-btn {
+                padding: 6px 14px;
+                font-size: 0.75rem;
+            }
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== SCROLL PROGRESS ===== -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="container header-flex">
+            <div class="logo"><i class="fas fa-bolt" style="-webkit-text-fill-color: var(--accent);"></i>NovaMart</div>
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#products">Shop</a>
+                <a href="#deals">Deals</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="search-wrap">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search products...">
+            </div>
+            <div class="actions">
+                <button class="icon-btn theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                <button class="icon-btn" id="wishlistBtn"><i class="far fa-heart"></i><span class="badge" id="wishlistCount">0</span></button>
+                <button class="icon-btn" id="cartOpenBtn"><i class="fas fa-bag-shopping"></i><span class="badge" id="cartCount">0</span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO ===== -->
+        <section class="container" id="home">
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="badge"><i class="fas fa-gem"></i> Limited Drop</span>
+                    <h1>Style that <span>stands out</span></h1>
+                    <p>Bold design meets premium essentials. Fresh drops every week.</p>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="shopBtn"><i class="fas fa-arrow-right"></i> Shop now</button>
+                        <button class="btn btn-outline" id="dealBtn">Explore deals</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=80" alt="Hero">
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== STATS ===== -->
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="15000">0</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="850">0</div>
+                    <div class="stat-label">Products</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="4.9">0</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">Hour Support</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PRODUCTS ===== -->
+        <section class="container" id="products">
+            <h2>✨ Trending Now</h2>
+            <p style="margin-bottom:24px;color:var(--text-secondary);font-weight:500;">Most loved by our community</p>
+            <div class="filters-bar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="audio">Audio</button>
+                <button class="filter-btn" data-filter="wearables">Wearables</button>
+                <button class="filter-btn" data-filter="gaming">Gaming</button>
+                <button class="filter-btn" data-filter="fashion">Fashion</button>
+                <button class="filter-btn" data-filter="smart-home">Smart Home</button>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+        </section>
+
+        <!-- ===== FLASH SALE ===== -->
+        <section class="container" id="deals">
+            <div class="flash-sale">
+                <div class="flash-img">
+                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="Flash Sale">
+                </div>
+                <div class="flash-content">
+                    <h2>⚡ Flash Sale</h2>
+                    <p style="color:var(--text-secondary);font-weight:500;">MacBook Pro M3 – 20% off + exclusive bundle</p>
+                    <div class="timer">
+                        <div class="time-block"><span class="num" id="days">00</span><span class="label">Days</span></div>
+                        <div class="time-block"><span class="num" id="hours">00</span><span class="label">Hrs</span></div>
+                        <div class="time-block"><span class="num" id="minutes">00</span><span class="label">Min</span></div>
+                        <div class="time-block"><span class="num" id="seconds">00</span><span class="label">Sec</span></div>
+                    </div>
+                    <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+                        <span style="font-size:32px;font-weight:900;color:var(--accent);">$1,299</span>
+                        <span style="text-decoration:line-through;color:var(--text-muted);font-weight:600;">$1,699</span>
+                        <button class="btn btn-primary" id="flashAddBtn"><i class="fas fa-cart-plus"></i> Grab Deal</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS ===== -->
+        <section class="container">
+            <h2>❤️ Customer Love</h2>
+            <p style="margin-bottom:24px;color:var(--text-secondary);font-weight:500;">What our community says</p>
+            <div class="testimonial-carousel" id="testimonialCarousel"></div>
+        </section>
+
+        <!-- ===== NEWSLETTER ===== -->
+        <section class="container">
+            <div class="newsletter-glass">
+                <h3>Join the Inner Circle</h3>
+                <p>Early access, exclusive rewards &amp; premium drops</p>
+                <form class="news-form" id="newsForm">
+                    <input type="email" id="newsEmail" placeholder="you@example.com" required>
+                    <button type="submit" class="btn btn-primary">Subscribe →</button>
+                </form>
+                <div id="newsMsg" style="margin-top:16px;font-weight:700;position:relative;z-index:1;"></div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section class="container" id="contact">
+            <div style="padding:40px 0 60px;">
+                <div class="contact-wrapper">
+                    <h2 style="text-align:center;margin-bottom:8px;">Get in Touch</h2>
+                    <p style="text-align:center;margin-bottom:24px;color:var(--text-secondary);font-weight:500;">We'd love to hear from you</p>
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div>
+                                <label for="name">Name</label>
+                                <input type="text" id="name" placeholder="Your name" required>
+                            </div>
+                            <div>
+                                <label for="email">Email</label>
+                                <input type="email" id="email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="How can we help?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="align-self:flex-start;"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== CART SIDEBAR ===== -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2><i class="fas fa-bag-shopping" style="color:var(--accent);"></i> Your Cart</h2>
+            <button class="cart-close" id="cartCloseBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <button class="btn btn-primary" id="continueShoppingBtn" style="margin-top:12px;">Continue Shopping</button>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total">
+                <span>Total</span>
+                <span class="total-price" id="cartTotalPrice">$0.00</span>
+            </div>
+            <button class="btn btn-primary" style="width:100%;justify-content:center;" id="checkoutBtn">
+                <i class="fas fa-lock"></i> Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- ===== TOAST ===== -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button class="fab-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo" style="font-size:24px;"><i class="fas fa-bolt" style="-webkit-text-fill-color:var(--accent);"></i>NovaMart</div>
+                    <p style="margin-top:8px;max-width:260px;">Next-gen e-commerce experience. Innovation meets style.</p>
+                </div>
+                <div>
+                    <h4>Explore</h4>
+                    <p>About<br>Careers<br>Sustainability</p>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <p>Help Center<br>Returns<br>Contact</p>
+                </div>
+                <div>
+                    <h4>Follow Us</h4>
+                    <div style="display:flex;gap:12px;margin-top:8px;">
+                        <a href="#" style="font-size:1.5rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="font-size:1.5rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="font-size:1.5rem;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-bottom">© 2026 NovaMart — Redefining modern retail</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ============================================
+        // DATA
+        // ============================================
+        const PRODUCTS = [
+            { id: 1, title: 'Sony WH-1000XM6', price: 399, oldPrice: 499, category: 'audio', rating: 5, reviews: 324, img: 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=600&q=80', badge: 'Best Seller' },
+            { id: 2, title: 'Apple Watch Ultra 2', price: 749, oldPrice: 799, category: 'wearables', rating: 5, reviews: 512, img: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=600&q=80', badge: 'New' },
+            { id: 3, title: 'Razer Blade 16', price: 2799, oldPrice: 3199, category: 'gaming', rating: 4.8, reviews: 210, img: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=600&q=80' },
+            { id: 4, title: 'Off-White Hoodie', price: 420, oldPrice: 650, category: 'fashion', rating: 4.7, reviews: 89, img: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80', badge: 'Limited' },
+            { id: 5, title: 'Dyson V15 Detect', price: 599, oldPrice: 749, category: 'smart-home', rating: 4.9, reviews: 178, img: 'https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&w=600&q=80' },
+            { id: 6, title: 'Bose QC Ultra', price: 379, oldPrice: 429, category: 'audio', rating: 4.9, reviews: 267, img: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=600&q=80' },
+            { id: 7, title: 'Samsung Galaxy S24', price: 999, oldPrice: 1199, category: 'wearables', rating: 4.8, reviews: 423, img: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?auto=format&fit=crop&w=600&q=80', badge: 'Hot' },
+            { id: 8, title: 'Logitech G Pro X', price: 149, oldPrice: 199, category: 'gaming', rating: 4.6, reviews: 156, img: 'https://images.unsplash.com/photo-1590658268037-6e1211640e7a?auto=format&fit=crop&w=600&q=80' }
+        ];
+
+        const TESTIMONIALS = [
+            { name: 'Sophia Chen', text: 'Absolutely love the bold design and fast shipping. My new favorite store.', rating: 5, avatar: 'https://randomuser.me/api/portraits/women/68.jpg' },
+            { name: 'James Walker', text: 'Flash sale was insane! Grabbed the MacBook at incredible price.', rating: 5, avatar: 'https://randomuser.me/api/portraits/men/32.jpg' },
+            { name: 'Elena Rodriguez', text: 'Customer support helped me within minutes. Premium experience all the way.', rating: 4.9, avatar: 'https://randomuser.me/api/portraits/women/44.jpg' },
+            { name: 'Michael Chen', text: 'The quality is outstanding. Will definitely shop here again.', rating: 5, avatar: 'https://randomuser.me/api/portraits/men/45.jpg' }
+        ];
+
+        // ============================================
+        // STATE
+        // ============================================
+        let cart = [];
+        let wishlist = [];
+        let currentFilter = 'all';
+        let currentSearch = '';
+
+        // ============================================
+        // DOM REFS
+        // ============================================
+        const productGrid = document.getElementById('productGrid');
+        const cartCount = document.getElementById('cartCount');
+        const wishlistCount = document.getElementById('wishlistCount');
+        const cartItems = document.getElementById('cartItems');
+        const cartFooter = document.getElementById('cartFooter');
+        const cartTotalPrice = document.getElementById('cartTotalPrice');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const cartOverlay = document.getElementById('cartOverlay');
+        const searchInput = document.getElementById('searchInput');
+        const toastContainer = document.getElementById('toastContainer');
+        const scrollProgress = document.getElementById('scrollProgress');
+        const backToTop = document.getElementById('backToTop');
+
+        // ============================================
+        // TOAST SYSTEM
+        // ============================================
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+            toast.innerHTML = `<i class="fas ${icon}"></i><span>${message}</span>`;
+            toastContainer.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(100%)';
+                toast.style.transition = 'all 0.3s ease';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // ============================================
+        // RENDER PRODUCTS
+        // ============================================
+        function renderProducts() {
+            let filtered = PRODUCTS;
+            
+            if (currentSearch) {
+                const q = currentSearch.toLowerCase();
+                filtered = filtered.filter(p => 
+                    p.title.toLowerCase().includes(q) || 
+                    p.category.toLowerCase().includes(q)
+                );
+            }
+            
+            if (currentFilter !== 'all') {
+                filtered = filtered.filter(p => p.category === currentFilter);
+            }
+
+            if (filtered.length === 0) {
+                productGrid.innerHTML = `
+                    <div style="grid-column:1/-1;text-align:center;padding:60px 0;">
+                        <i class="fas fa-search" style="font-size:3rem;opacity:0.3;"></i>
+                        <h3 style="margin-top:16px;">No products found</h3>
+                        <p style="color:var(--text-secondary);">Try adjusting your search or filters</p>
+                    </div>
+                `;
+                return;
+            }
+
+            productGrid.innerHTML = filtered.map(p => {
+                const inWishlist = wishlist.includes(p.id);
+                return `
+                    <div class="product-card">
+                        ${p.badge ? `<div class="product-badge">${p.badge}</div>` : ''}
+                        <img class="product-img" src="${p.img}" alt="${p.title}" loading="lazy">
+                        <div class="product-body">
+                            <div class="product-title">${p.title}</div>
+                            <div class="price-row">
+                                <span class="price-current">$${p.price}</span>
+                                ${p.oldPrice ? `<span class="price-old">$${p.oldPrice}</span>` : ''}
+                            </div>
+                            <div style="color:var(--text-secondary);font-size:0.9rem;font-weight:600;">
+                                <i class="fas fa-star" style="color:#ffd700;"></i> ${p.rating} (${p.reviews})
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-add" data-id="${p.id}"><i class="fas fa-cart-shopping"></i> Add</button>
+                                <button class="btn-wishlist ${inWishlist ? 'active' : ''}" data-id="${p.id}">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            document.querySelectorAll('.btn-add[data-id]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = parseInt(btn.dataset.id);
+                    addToCart(id);
+                });
+            });
+
+            document.querySelectorAll('.btn-wishlist[data-id]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = parseInt(btn.dataset.id);
+                    toggleWishlist(id);
+                });
+            });
+        }
+
+        // ============================================
+        // CART FUNCTIONS
+        // ============================================
+        function addToCart(productId) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.quantity++;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            updateCartUI();
+            showToast(`${product.title} added to cart!`, 'success');
+            renderProducts();
+        }
+
+        function removeFromCart(productId) {
+            const product = cart.find(item => item.id === productId);
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+            if (product) {
+                showToast(`${product.title} removed from cart`, 'error');
+            }
+        }
+
+        function updateQuantity(productId, change) {
+            const item = cart.find(i => i.id === productId);
+            if (!item) return;
+            item.quantity += change;
+            if (item.quantity <= 0) {
+                removeFromCart(productId);
+                return;
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            
+            cartCount.textContent = totalItems;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-bag"></i>
+                        <p>Your cart is empty</p>
+                        <button class="btn btn-primary" id="continueShoppingBtn" style="margin-top:12px;">Continue Shopping</button>
+                    </div>
+                `;
+                document.getElementById('continueShoppingBtn')?.addEventListener('click', closeCart);
+                cartFooter.style.display = 'none';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <img class="cart-item-img" src="${item.img}" alt="${item.title}">
+                        <div class="cart-item-info">
+                            <div class="cart-item-title">${item.title}</div>
+                            <div class="cart-item-price">$${item.price}</div>
+                            <div class="cart-item-qty">
+                                <button onclick="updateQuantity(${item.id}, -1)">−</button>
+                                <span>${item.quantity}</span>
+                                <button onclick="updateQuantity(${item.id}, 1)">+</button>
+                            </div>
+                        </div>
+                        <button class="cart-item-remove" onclick="removeFromCart(${item.id})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `).join('');
+                cartFooter.style.display = 'block';
+                cartTotalPrice.textContent = `$${totalPrice.toFixed(2)}`;
+            }
+        }
+
+        // ============================================
+        // WISHLIST FUNCTIONS
+        // ============================================
+        function toggleWishlist(productId) {
+            const index = wishlist.indexOf(productId);
+            if (index > -1) {
+                wishlist.splice(index, 1);
+                showToast('Removed from wishlist', 'error');
+            } else {
+                wishlist.push(productId);
+                showToast('Added to wishlist ❤️', 'success');
+            }
+            wishlistCount.textContent = wishlist.length;
+            renderProducts();
+        }
+
+        // ============================================
+        // CART SIDEBAR
+        // ============================================
+        function openCart() {
+            cartSidebar.classList.add('open');
+            cartOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCart() {
+            cartSidebar.classList.remove('open');
+            cartOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('cartOpenBtn').addEventListener('click', openCart);
+        document.getElementById('cartCloseBtn').addEventListener('click', closeCart);
+        document.getElementById('cartOverlay').addEventListener('click', closeCart);
+
+        // ============================================
+        // CHECKOUT
+        // ============================================
+        document.getElementById('checkoutBtn')?.addEventListener('click', () => {
+            if (cart.length === 0) {
+                showToast('Your cart is empty!', 'error');
+                return;
+            }
+            const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            showToast(`Order placed! Total: $${total.toFixed(2)} 🎉`, 'success');
+            cart = [];
+            updateCartUI();
+            closeCart();
+        });
+
+        // ============================================
+        // FILTERS
+        // ============================================
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.dataset.filter;
+                renderProducts();
+            });
+        });
+
+        // ============================================
+        // SEARCH
+        // ============================================
+        searchInput.addEventListener('input', (e) => {
+            currentSearch = e.target.value;
+            renderProducts();
+        });
+
+        // ============================================
+        // THEME TOGGLE
+        // ============================================
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('light');
+            const icon = this.querySelector('i');
+            if (document.body.classList.contains('light')) {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
+        });
+
+        // ============================================
+        // COUNTDOWN
+        // ============================================
+        function startCountdown() {
+            const target = new Date();
+            target.setDate(target.getDate() + 2);
+            target.setHours(target.getHours() + 5);
+            
+            function update() {
+                const diff = target - new Date();
+                if (diff <= 0) {
+                    ['days', 'hours', 'minutes', 'seconds'].forEach(id => 
+                        document.getElementById(id).textContent = '00'
+                    );
+                    return;
+                }
+                document.getElementById('days').textContent = String(Math.floor(diff/(1000*60*60*24))).padStart(2,'0');
+                document.getElementById('hours').textContent = String(Math.floor((diff/(1000*60*60))%24)).padStart(2,'0');
+                document.getElementById('minutes').textContent = String(Math.floor((diff/(1000*60))%60)).padStart(2,'0');
+                document.getElementById('seconds').textContent = String(Math.floor((diff/1000)%60)).padStart(2,'0');
+            }
+            update();
+            setInterval(update, 1000);
+        }
+        startCountdown();
+
+        // ============================================
+        // STATS COUNTER ANIMATION
+        // ============================================
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = parseFloat(stat.dataset.target);
+                const isDecimal = target % 1 !== 0;
+                let current = 0;
+                const increment = target / 60;
+                const interval = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(interval);
+                    }
+                    stat.textContent = isDecimal ? current.toFixed(1) : Math.floor(current);
+                }, 20);
+            });
+        }
+
+        // ============================================
+        // SCROLL PROGRESS & BACK TO TOP
+        // ============================================
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            scrollProgress.style.width = progress + '%';
+
+            if (scrollTop > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ============================================
+        // TESTIMONIALS
+        // ============================================
+        const testimonialCarousel = document.getElementById('testimonialCarousel');
+        testimonialCarousel.innerHTML = TESTIMONIALS.map(t => `
+            <div class="testimonial-card">
+                <div style="display:flex;gap:14px;align-items:center;margin-bottom:12px;">
+                    <img src="${t.avatar}" style="width:52px;height:52px;border-radius:60px;object-fit:cover;border:2px solid var(--border);">
+                    <div>
+                        <strong style="font-size:1.05rem;">${t.name}</strong>
+                        <div style="color:#ffd700;font-size:0.9rem;">${'★'.repeat(Math.floor(t.rating))}</div>
+                    </div>
+                </div>
+                <p style="color:var(--text-secondary);font-weight:500;">“${t.text}”</p>
+            </div>
+        `).join('');
+
+        // ============================================
+        // CONTACT FORM
+        // ============================================
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            const existingMsg = this.querySelector('.form-feedback');
+            if (existingMsg) existingMsg.remove();
+
+            const feedback = document.createElement('div');
+            feedback.className = 'form-feedback';
+
+            if (!name || !email || !message) {
+                feedback.className += ' error';
+                feedback.innerHTML = `<i class="fas fa-exclamation-circle"></i> Please fill out all fields.`;
+                this.appendChild(feedback);
+                
+                ['name', 'email', 'message'].forEach(id => {
+                    const field = document.getElementById(id);
+                    if (!field.value.trim()) {
+                        field.style.borderColor = 'var(--error)';
+                        field.style.background = 'var(--error-bg)';
+                    }
+                });
+                return;
+            }
+
+            feedback.className += ' success';
+            feedback.innerHTML = `<i class="fas fa-check-circle"></i> Thank you, ${name}! We'll get back to you within 24 hours.`;
+            this.appendChild(feedback);
+            this.reset();
+
+            ['name', 'email', 'message'].forEach(id => {
+                const field = document.getElementById(id);
+                field.style.borderColor = '';
+                field.style.background = '';
+            });
+
+            setTimeout(() => {
+                feedback.style.opacity = '0';
+                feedback.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => feedback.remove(), 500);
+            }, 5000);
+
+            showToast('Message sent successfully! 🎉', 'success');
+        });
+
+        ['name', 'email', 'message'].forEach(id => {
+            const field = document.getElementById(id);
+            field.addEventListener('input', function() {
+                if (this.value.trim()) {
+                    this.style.borderColor = '';
+                    this.style.background = '';
+                }
+                const existingMsg = document.querySelector('.form-feedback');
+                if (existingMsg) existingMsg.remove();
+            });
+        });
+
+        // ============================================
+        // NEWSLETTER
+        // ============================================
+        document.getElementById('newsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('newsEmail').value.trim();
+            const msg = document.getElementById('newsMsg');
+            if (!email.includes('@')) {
+                msg.textContent = 'Valid email required';
+                msg.style.color = 'var(--error)';
+                return;
+            }
+            msg.textContent = '✅ Thanks for subscribing!';
+            msg.style.color = 'var(--success)';
+            document.getElementById('newsEmail').value = '';
+            setTimeout(() => msg.textContent = '', 3000);
+            showToast('Subscribed successfully! 🎉', 'success');
+        });
+
+        // ============================================
+        // FLASH SALE ADD
+        // ============================================
+        document.getElementById('flashAddBtn').addEventListener('click', () => {
+            const flashProduct = PRODUCTS.find(p => p.title.includes('MacBook'));
+            if (flashProduct) {
+                addToCart(flashProduct.id);
+            }
+        });
+
+        // ============================================
+        // HERO BUTTONS
+        // ============================================
+        document.getElementById('shopBtn').addEventListener('click', () => {
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+        });
+        document.getElementById('dealBtn').addEventListener('click', () => {
+            document.getElementById('deals').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // ============================================
+        // WISHLIST BUTTON
+        // ============================================
+        document.getElementById('wishlistBtn').addEventListener('click', () => {
+            if (wishlist.length === 0) {
+                showToast('Your wishlist is empty ❤️', 'error');
+                return;
+            }
+            const names = wishlist.map(id => {
+                const product = PRODUCTS.find(p => p.id === id);
+                return product ? product.title : '';
+            }).filter(Boolean);
+            showToast(`Wishlist: ${names.join(', ')}`, 'success');
+        });
+
+        // ============================================
+        // INIT
+        // ============================================
+        renderProducts();
+        updateCartUI();
+        wishlistCount.textContent = wishlist.length;
+        
+        // Animate stats after a delay
+        setTimeout(animateStats, 500);
+    </script>
+</body>
+</html>
